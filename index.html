@@ -67,9 +67,64 @@
         .envelope.open .envelope-message {
             opacity: 1;
         }
+        .emoji-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 20px;
+            transition: transform 0.7s cubic-bezier(.77,0,.18,1);
+            position: relative;
+            z-index: 5;
+        }
+        .emoji-row .emoji {
+            font-size: 2.5rem;
+            transition: transform 0.7s cubic-bezier(.77,0,.18,1), opacity 0.7s;
+            opacity: 1;
+        }
+        .emoji-row.explode .emoji1 {
+            transform: translate(-120px, -80px) scale(1.3) rotate(-20deg);
+        }
+        .emoji-row.explode .emoji2 {
+            transform: translate(-40px, -120px) scale(1.3) rotate(-10deg);
+        }
+        .emoji-row.explode .emoji3 {
+            transform: translate(40px, -120px) scale(1.3) rotate(10deg);
+        }
+        .emoji-row.explode .emoji4 {
+            transform: translate(120px, -80px) scale(1.3) rotate(20deg);
+        }
+        .emoji-row.explode .emoji5 {
+            transform: translate(0, -160px) scale(1.5) rotate(0deg);
+        }
+        .emoji-row.hide .emoji {
+            opacity: 0;
+        }
+        .birthday-info {
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .birthday-info .name {
+            color: #00ffcc;
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+        .birthday-info .date {
+            color: #ff6f61;
+            font-size: 1rem;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body class="p-8 flex flex-col items-center justify-center min-h-screen">
+    <!-- متغيرات التخصيص -->
+    <script>
+        window.birthdayData = {
+            name: 'محمد أحمد',
+            date: '2024-06-10',
+            message: 'في يومك المميز أتمنى لك سنة مليئة بالسعادة ❤️'
+        };
+    </script>
     <!-- SoundCloud Embed Player -->
     <div style="width: 100%; max-width: 400px; margin: 0 auto 20px auto;">
       <iframe id="sc-player" width="100%" height="120" scrolling="no" frameborder="no" allow="autoplay"
@@ -90,13 +145,22 @@
     <!-- Main Celebration Card -->
     <div class="page-preview w-full max-w-xl flex flex-col items-center justify-center py-10 px-6">
         <div class="mockup-content w-full flex flex-col items-center justify-center py-4 rounded-lg">
+            <!-- معلومات العيد ميلاد -->
+            <div class="birthday-info">
+                <div class="name" id="birthdayName">محمد أحمد</div>
+                <div class="date" id="birthdayDate">2024-06-10</div>
+            </div>
             <div class="text-xl font-bold text-center mb-3" style="color: #ff6f61;">إلى أغلى الناس على قلبي...</div>
             <div class="text-4xl font-extrabold text-center mb-5 glow-text" style="color: #00ffcc;">عيد ميلاد سعيد! <span style='font-size:1.2em;'>🎂</span></div>
-            <div class="relative w-full flex justify-center mb-6" style="height: 100px;">
-                <div style="font-size: 3rem; position: absolute; left: 30%; top: 10px; color: #ff6f61; animation: float 3s infinite ease-in-out;">🎈</div>
-                <div style="font-size: 2.5rem; position: absolute; right: 35%; top: 0; color: #00ffcc; animation: float 4s infinite ease-in-out 1s;">🎈</div>
-                <div style="font-size: 4rem; position: absolute; left: 45%; top: 20px; color: #ffcc00; animation: float 3.5s infinite ease-in-out 0.5s;">🎁</div>
+            <!-- صف الرموز المرتبة -->
+            <div class="emoji-row" id="emojiRow">
+                <span class="emoji emoji1">🎈</span>
+                <span class="emoji emoji2">🎁</span>
+                <span class="emoji emoji5">🎉</span>
+                <span class="emoji emoji3">🎈</span>
+                <span class="emoji emoji4">🎁</span>
             </div>
+            <div class="relative w-full flex justify-center mb-6" style="height: 100px;"></div>
             <div class="flex mb-4 justify-center w-full">
                 <div class="btn-preview text-sm px-4 py-2" id="musicButton">تشغيل الموسيقى 🎵</div>
             </div>
