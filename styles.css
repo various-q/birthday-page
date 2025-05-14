@@ -1,146 +1,81 @@
-/* General Styles */
 body {
-    background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
-    color: #ffffff;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
     font-family: 'Tajawal', sans-serif;
-    min-height: 100vh;
-    position: relative;
+    color: #fff;
     overflow-x: hidden;
 }
 
-/* Feature Cards */
-.feature-card {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 12px;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: all 0.3s ease;
-}
-
-.feature-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    background: rgba(255, 255, 255, 0.1);
-}
-
-.feature-icon {
-    width: 40px;
-    height: 40px;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-left: 10px;
-}
-
-/* Page Preview */
 .page-preview {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
-.mockup-content {
-    background: linear-gradient(135deg, #2d2d2d, #1a1a1a);
-    border-radius: 15px;
-    position: relative;
-    overflow: hidden;
+.glow-text {
+    text-shadow: 0 0 10px rgba(0, 255, 204, 0.5),
+                 0 0 20px rgba(0, 255, 204, 0.3),
+                 0 0 30px rgba(0, 255, 204, 0.2);
 }
 
-/* Buttons */
 .btn-preview, .btn-control {
-    background: linear-gradient(135deg, #00ffcc, #00ccff);
-    color: #1a1a1a;
+    background: linear-gradient(135deg, #ff6f61 0%, #ff8f61 100%);
+    color: white;
     border-radius: 25px;
     cursor: pointer;
     transition: all 0.3s ease;
-    text-align: center;
-    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(255, 111, 97, 0.3);
 }
 
 .btn-preview:hover, .btn-control:hover {
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 255, 204, 0.3);
+    box-shadow: 0 6px 20px rgba(255, 111, 97, 0.4);
 }
 
-/* Animations */
+.btn-control {
+    background: linear-gradient(135deg, #00ffcc 0%, #00ccff 100%);
+    box-shadow: 0 4px 15px rgba(0, 255, 204, 0.3);
+}
+
+.btn-control:hover {
+    box-shadow: 0 6px 20px rgba(0, 255, 204, 0.4);
+}
+
+/* Animation for emojis */
 @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
 }
 
-@keyframes glow {
-    0%, 100% { text-shadow: 0 0 10px rgba(0, 255, 204, 0.5); }
-    50% { text-shadow: 0 0 20px rgba(0, 255, 204, 0.8); }
+.emoji {
+    animation: float 3s ease-in-out infinite;
 }
 
-@keyframes pulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.05); }
+.emoji:nth-child(2) {
+    animation-delay: 0.5s;
 }
 
-/* Decorative Elements */
-.balloon {
-    position: absolute;
-    font-size: 2rem;
-    animation: float 3s infinite ease-in-out;
-    z-index: 1;
+.emoji:nth-child(3) {
+    animation-delay: 1s;
 }
 
-.confetti {
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    animation: float 4s infinite ease-in-out;
-    z-index: 1;
-}
-
-/* Glow Effects */
-.glow-text {
-    animation: glow 2s infinite ease-in-out;
-}
-
-/* Responsive Design */
-@media (max-width: 1024px) {
-    .grid-cols-4 {
-        grid-template-columns: repeat(2, 1fr);
+/* Responsive adjustments */
+@media (max-width: 640px) {
+    .emoji {
+        font-size: 1.5rem;
     }
     
-    .col-span-2 {
-        grid-column: span 2;
-    }
-}
-
-@media (max-width: 768px) {
-    .grid-cols-4 {
-        grid-template-columns: 1fr;
+    .birthday-info .name {
+        font-size: 1.3rem;
     }
     
-    .col-span-2 {
-        grid-column: span 1;
+    .birthday-info .date {
+        font-size: 1rem;
     }
     
-    .page-preview {
-        height: 80vh;
+    .envelope {
+        width: 280px;
+        height: 180px;
     }
 }
-
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-    width: 8px;
-}
-
-::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.1);
-}
-
-::-webkit-scrollbar-thumb {
-    background: linear-gradient(135deg, #00ffcc, #00ccff);
-    border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(135deg, #00ccff, #00ffcc);
-} 
