@@ -8,6 +8,66 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .envelope-container {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 30px;
+            z-index: 10;
+        }
+        .envelope {
+            width: 320px;
+            height: 200px;
+            position: relative;
+            perspective: 800px;
+            margin-bottom: 20px;
+        }
+        .envelope-flap {
+            width: 100%;
+            height: 60px;
+            background: linear-gradient(135deg, #ff6f61 60%, #fff0 100%);
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            z-index: 2;
+            transform-origin: top center;
+            transition: transform 0.7s cubic-bezier(.77,0,.18,1);
+        }
+        .envelope.open .envelope-flap {
+            transform: rotateX(-120deg);
+        }
+        .envelope-body {
+            width: 100%;
+            height: 140px;
+            background: #fff;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .envelope-message {
+            opacity: 0;
+            transition: opacity 0.7s 0.3s;
+            color: #ff6f61;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-align: center;
+            padding: 20px 10px 0 10px;
+        }
+        .envelope.open .envelope-message {
+            opacity: 1;
+        }
+    </style>
 </head>
 <body class="p-8 flex flex-col items-center justify-center min-h-screen">
     <!-- SoundCloud Embed Player -->
@@ -30,7 +90,7 @@
     <!-- Main Celebration Card -->
     <div class="page-preview w-full max-w-xl flex flex-col items-center justify-center py-10 px-6">
         <div class="mockup-content w-full flex flex-col items-center justify-center py-4 rounded-lg">
-            <div class="text-xl font-bold text-center mb-3" style="color: #ff6f61;">إلى أغلى الناس على قلبي [NONA].</div>
+            <div class="text-xl font-bold text-center mb-3" style="color: #ff6f61;">إلى أغلى الناس على قلبي...</div>
             <div class="text-4xl font-extrabold text-center mb-5 glow-text" style="color: #00ffcc;">عيد ميلاد سعيد! <span style='font-size:1.2em;'>🎂</span></div>
             <div class="relative w-full flex justify-center mb-6" style="height: 100px;">
                 <div style="font-size: 3rem; position: absolute; left: 30%; top: 10px; color: #ff6f61; animation: float 3s infinite ease-in-out;">🎈</div>
@@ -40,14 +100,21 @@
             <div class="flex mb-4 justify-center w-full">
                 <div class="btn-preview text-sm px-4 py-2" id="musicButton">تشغيل الموسيقى 🎵</div>
             </div>
-            <div class="p-3 bg-white bg-opacity-10 rounded-lg mb-4 w-4/5 text-center">
-                <p class="text-sm">في يومك المميز أتمنى لك سنة مليئة بالسعادة ❤️</p>
+            <!-- ظرف المعايدة -->
+            <div id="envelopeContainer" class="envelope-container">
+                <div id="envelope" class="envelope">
+                    <div class="envelope-flap"></div>
+                    <div class="envelope-body">
+                        <div class="envelope-message" id="envelopeMessage">في يومك المميز أتمنى لك سنة مليئة بالسعادة ❤️</div>
+                    </div>
+                </div>
             </div>
-            <div class="btn-control text-sm px-4 py-2">أضغط هنا للمفاجأة ✨</div>
+            <!-- زر المفاجأة -->
+            <div class="btn-control text-sm px-4 py-2" id="surpriseButton">أضغط هنا للمفاجأة ✨</div>
         </div>
     </div>
 
     <script src="https://w.soundcloud.com/player/api.js"></script>
     <script src="script.js"></script>
 </body>
-</html>
+</html> 
