@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>صفحة عيد ميلاد تفاعلية - النسخة النهائية</title>
+    <title>عيد ميلاد سعيد!</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body class="p-8 flex flex-col items-center">
+<body class="p-8 flex flex-col items-center justify-center min-h-screen">
     <!-- Audio Element -->
     <audio id="birthdaySong" loop>
         <source src="https://drive.google.com/uc?export=download&id=1-2X3Y4Z5A6B7C8D9E0F1G2H3I4J5K6L7M" type="audio/mpeg">
         عذراً، متصفحك لا يدعم تشغيل الصوت.
     </audio>
-    
+
     <!-- Decorative elements -->
     <div class="balloon" style="top: 50px; right: 150px; color: #ff6f61;">🎈</div>
     <div class="balloon" style="top: 100px; left: 180px; color: #00ffcc; animation-delay: 1s;">🎈</div>
@@ -25,205 +25,26 @@
     <div class="confetti" style="top: 0; left: 75%; background-color: #ff00ff; animation-delay: 2s;"></div>
     <div class="confetti" style="top: 0; left: 30%; background-color: #ffcc00; animation-delay: 3s;"></div>
     <div class="confetti" style="top: 0; left: 65%; background-color: #66ccff; animation-delay: 4s;"></div>
-    
-    <!-- Header -->
-    <div class="text-center mb-6">
-        <h1 class="text-5xl font-extrabold glow-text pulse" style="color: #00ffcc;">صفحة عيد ميلاد تفاعلية</h1>
-        <p class="text-xl mt-2" style="color: #ff6f61;">النسخة النهائية الجاهزة للمشاركة عبر واتساب</p>
-    </div>
-    
-    <!-- Main Content -->
-    <div class="grid grid-cols-4 gap-6 w-full">
-        <!-- Left Features Column -->
-        <div class="col-span-1 flex flex-col gap-4">
-            <div class="feature-card p-4">
-                <div class="flex items-start mb-3">
-                    <div class="feature-icon bg-gradient-to-br from-red-500 to-yellow-500">
-                        <i class="fas fa-magic text-white"></i>
-                    </div>
-                    <h3 class="text-lg font-bold">تأثيرات احتفالية</h3>
-                </div>
-                <ul class="text-sm space-y-2 pr-3">
-                    <li><i class="fas fa-check-circle text-green-400 ml-1"></i> كونفيتي متحرك</li>
-                    <li><i class="fas fa-check-circle text-green-400 ml-1"></i> بالونات متطايرة</li>
-                    <li><i class="fas fa-check-circle text-green-400 ml-1"></i> ألعاب نارية تفاعلية</li>
-                </ul>
+
+    <!-- Main Celebration Card -->
+    <div class="page-preview w-full max-w-xl flex flex-col items-center justify-center py-10 px-6">
+        <div class="mockup-content w-full flex flex-col items-center justify-center py-4 rounded-lg">
+            <div class="text-xl font-bold text-center mb-3" style="color: #ff6f61;">إلى أغلى الناس على قلبي...</div>
+            <div class="text-4xl font-extrabold text-center mb-5 glow-text" style="color: #00ffcc;">عيد ميلاد سعيد! <span style='font-size:1.2em;'>🎂</span></div>
+            <div class="relative w-full flex justify-center mb-6" style="height: 100px;">
+                <div style="font-size: 3rem; position: absolute; left: 30%; top: 10px; color: #ff6f61; animation: float 3s infinite ease-in-out;">🎈</div>
+                <div style="font-size: 2.5rem; position: absolute; right: 35%; top: 0; color: #00ffcc; animation: float 4s infinite ease-in-out 1s;">🎈</div>
+                <div style="font-size: 4rem; position: absolute; left: 45%; top: 20px; color: #ffcc00; animation: float 3.5s infinite ease-in-out 0.5s;">🎁</div>
             </div>
-            
-            <div class="feature-card p-4">
-                <div class="flex items-start mb-3">
-                    <div class="feature-icon bg-gradient-to-br from-indigo-500 to-purple-500">
-                        <i class="fas fa-paint-brush text-white"></i>
-                    </div>
-                    <h3 class="text-lg font-bold">تصميم جذاب</h3>
-                </div>
-                <ul class="text-sm space-y-2 pr-3">
-                    <li><i class="fas fa-check-circle text-green-400 ml-1"></i> خلفية متدرجة الألوان</li>
-                    <li><i class="fas fa-check-circle text-green-400 ml-1"></i> تأثيرات توهج وحركة</li>
-                    <li><i class="fas fa-check-circle text-green-400 ml-1"></i> متوافق مع جميع الأجهزة</li>
-                </ul>
+            <div class="flex mb-4 justify-center w-full">
+                <div class="btn-preview text-sm px-4 py-2" id="musicButton">تشغيل الموسيقى 🎵</div>
             </div>
-            
-            <div class="feature-card p-4">
-                <div class="flex items-start mb-3">
-                    <div class="feature-icon bg-gradient-to-br from-green-400 to-blue-500">
-                        <i class="fas fa-share-alt text-white"></i>
-                    </div>
-                    <h3 class="text-lg font-bold">سهولة المشاركة</h3>
-                </div>
-                <ul class="text-sm space-y-2 pr-3">
-                    <li><i class="fas fa-check-circle text-green-400 ml-1"></i> رابط قابل للمشاركة</li>
-                    <li><i class="fas fa-check-circle text-green-400 ml-1"></i> يعمل على واتساب</li>
-                    <li><i class="fas fa-check-circle text-green-400 ml-1"></i> تحميل مباشر للملفات</li>
-                </ul>
+            <div class="p-3 bg-white bg-opacity-10 rounded-lg mb-4 w-4/5 text-center">
+                <p class="text-sm">في يومك المميز أتمنى لك سنة مليئة بالسعادة ❤️</p>
             </div>
-        </div>
-        
-        <!-- Center Page Preview -->
-        <div class="col-span-2 flex flex-col items-center">
-            <div class="page-preview w-full h-96 flex flex-col items-center">
-                <div class="p-5 w-full h-full overflow-hidden">
-                    <div class="mockup-content w-full h-full flex flex-col items-center justify-start py-4 rounded-lg">
-                        <!-- المحاكاة للصفحة النهائية -->
-                        <div class="text-xl font-bold text-center mb-3" style="color: #ff6f61;">إلى أغلى الناس على قلبي...</div>
-                        <div class="text-4xl font-extrabold text-center mb-5 glow-text" style="color: #00ffcc;">عيد ميلاد سعيد! 🎂</div>
-                        
-                        <div class="relative w-full flex justify-center mb-6" style="height: 100px;">
-                            <div style="font-size: 3rem; position: absolute; left: 30%; top: 10px; color: #ff6f61; animation: float 3s infinite ease-in-out;">🎈</div>
-                            <div style="font-size: 2.5rem; position: absolute; right: 35%; top: 0; color: #00ffcc; animation: float 4s infinite ease-in-out 1s;">🎈</div>
-                            <div style="font-size: 4rem; position: absolute; left: 45%; top: 20px; color: #ffcc00; animation: float 3.5s infinite ease-in-out 0.5s;">🎁</div>
-                        </div>
-                        
-                        <div class="flex space-x-3 mb-4 justify-center w-full">
-                            <div class="btn-preview text-sm px-4 py-2" id="musicButton">تشغيل الموسيقى 🎵</div>
-                        </div>
-                        
-                        <div class="p-3 bg-white bg-opacity-10 rounded-lg mb-4 w-4/5 text-center">
-                            <p class="text-sm">في يومك المميز أتمنى لك سنة مليئة بالسعادة ❤️</p>
-                        </div>
-                        
-                        <div class="btn-control text-sm px-4 py-2">أضغط هنا للمفاجأة ✨</div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="mt-4 grid grid-cols-2 gap-4 w-full">
-                <div class="feature-card p-3">
-                    <div class="flex items-center">
-                        <i class="fab fa-soundcloud text-2xl ml-2" style="color: #ff7700;"></i>
-                        <div>
-                            <h3 class="text-base font-bold">دعم SoundCloud</h3>
-                            <p class="text-xs">تشغيل وتحكم كامل</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="feature-card p-3">
-                    <div class="flex items-center">
-                        <i class="fab fa-youtube text-2xl ml-2" style="color: #ff0000;"></i>
-                        <div>
-                            <h3 class="text-base font-bold">دعم YouTube</h3>
-                            <p class="text-xs">فيديوهات مع API</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="mt-6 flex items-center">
-                <a href="#" class="bg-gradient-to-r from-indigo-500 to-purple-600 px-5 py-2 rounded-full text-white font-bold hover:shadow-lg hover:from-indigo-600 hover:to-purple-700 transition-all duration-300 flex items-center">
-                    <i class="fas fa-download ml-2"></i>
-                    تحميل الملفات الكاملة
-                </a>
-            </div>
-        </div>
-        
-        <!-- Right Features Column -->
-        <div class="col-span-1 flex flex-col gap-4">
-            <div class="feature-card p-4">
-                <div class="flex items-start mb-3">
-                    <div class="feature-icon bg-gradient-to-br from-yellow-400 to-orange-500">
-                        <i class="fas fa-music text-white"></i>
-                    </div>
-                    <h3 class="text-lg font-bold">دعم الموسيقى</h3>
-                </div>
-                <ul class="text-sm space-y-2 pr-3">
-                    <li><i class="fas fa-check-circle text-green-400 ml-1"></i> SoundCloud API</li>
-                    <li><i class="fas fa-check-circle text-green-400 ml-1"></i> YouTube API</li>
-                    <li><i class="fas fa-check-circle text-green-400 ml-1"></i> تحكم كامل بالتشغيل</li>
-                </ul>
-            </div>
-            
-            <div class="feature-card p-4">
-                <div class="flex items-start mb-3">
-                    <div class="feature-icon bg-gradient-to-br from-pink-500 to-red-500">
-                        <i class="fas fa-edit text-white"></i>
-                    </div>
-                    <h3 class="text-lg font-bold">قابلية التخصيص</h3>
-                </div>
-                <ul class="text-sm space-y-2 pr-3">
-                    <li><i class="fas fa-check-circle text-green-400 ml-1"></i> تعديل الرسالة بسهولة</li>
-                    <li><i class="fas fa-check-circle text-green-400 ml-1"></i> اختيار الموسيقى المفضلة</li>
-                    <li><i class="fas fa-check-circle text-green-400 ml-1"></i> تخصيص الألوان والأنماط</li>
-                </ul>
-            </div>
-            
-            <div class="feature-card p-4">
-                <div class="flex items-start mb-3">
-                    <div class="feature-icon bg-gradient-to-br from-blue-400 to-teal-500">
-                        <i class="fas fa-code text-white"></i>
-                    </div>
-                    <h3 class="text-lg font-bold">سهولة التعديل</h3>
-                </div>
-                <ul class="text-sm space-y-2 pr-3">
-                    <li><i class="fas fa-check-circle text-green-400 ml-1"></i> كود منظم ومفهوم</li>
-                    <li><i class="fas fa-check-circle text-green-400 ml-1"></i> تعليقات توضيحية</li>
-                    <li><i class="fas fa-check-circle text-green-400 ml-1"></i> سهولة تعديل الكود</li>
-                </ul>
-            </div>
+            <div class="btn-control text-sm px-4 py-2">أضغط هنا للمفاجأة ✨</div>
         </div>
     </div>
-    
-    <!-- How to Use / Send Section -->
-    <div class="w-full mt-6">
-        <div class="bg-white bg-opacity-10 rounded-xl p-4">
-            <h2 class="text-center text-xl font-bold mb-3 glow-text" style="color: #00ffcc;">كيفية المشاركة</h2>
-            
-            <div class="grid grid-cols-3 gap-5">
-                <div class="feature-card p-3 text-center">
-                    <div class="flex justify-center mb-2">
-                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center">
-                            <span class="font-bold">1</span>
-                        </div>
-                    </div>
-                    <h3 class="text-sm font-bold mb-1">تحميل الملفات</h3>
-                    <p class="text-xs">قم بتحميل ملفات HTML، CSS، وJavaScript في مجلد واحد</p>
-                </div>
-                
-                <div class="feature-card p-3 text-center">
-                    <div class="flex justify-center mb-2">
-                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-green-500 to-teal-600 flex items-center justify-center">
-                            <span class="font-bold">2</span>
-                        </div>
-                    </div>
-                    <h3 class="text-sm font-bold mb-1">تخصيص الرسالة</h3>
-                    <p class="text-xs">عدّل الرسالة والموسيقى حسب رغبتك في ملف HTML</p>
-                </div>
-                
-                <div class="feature-card p-3 text-center">
-                    <div class="flex justify-center mb-2">
-                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-red-500 to-pink-600 flex items-center justify-center">
-                            <span class="font-bold">3</span>
-                        </div>
-                    </div>
-                    <h3 class="text-sm font-bold mb-1">مشاركة الرابط</h3>
-                    <p class="text-xs">ارفع الملفات على Netlify أو GitHub Pages وشارك الرابط</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Footer -->
-    <div class="absolute bottom-4 right-4 text-gray-400">4/4</div>
 
     <script src="script.js"></script>
 </body>
