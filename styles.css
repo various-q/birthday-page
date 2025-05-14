@@ -3,6 +3,25 @@ body {
     font-family: 'Tajawal', sans-serif;
     color: #fff;
     overflow-x: hidden;
+    min-height: 100vh;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: -2;
+    background: url('https://i.postimg.cc/5yyN7WjV/image.jpg') center center/cover no-repeat;
+    opacity: 0.45;
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: -1;
+    background: linear-gradient(135deg, #1a1a1a99 0%, #2d2d2d99 100%);
 }
 
 .page-preview {
@@ -78,4 +97,4 @@ body {
         width: 280px;
         height: 180px;
     }
-}
+} 
