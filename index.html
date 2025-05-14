@@ -10,11 +10,12 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body class="p-8 flex flex-col items-center justify-center min-h-screen">
-    <!-- Audio Element -->
-    <audio id="birthdaySong" loop>
-        <source src="https://youtu.be/JF9ucSb4UNk?si=HVtf9MaSGkU_Bz-B" type="audio/mpeg">
-        عذراً، متصفحك لا يدعم تشغيل الصوت.
-    </audio>
+    <!-- SoundCloud Embed Player -->
+    <div style="width: 100%; max-width: 400px; margin: 0 auto 20px auto;">
+      <iframe width="100%" height="120" scrolling="no" frameborder="no" allow="autoplay"
+        src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/zanb-mana/wz7i1j0l5zgw&color=%2300ffcc&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true">
+      </iframe>
+    </div>
 
     <!-- Decorative elements -->
     <div class="balloon" style="top: 50px; right: 150px; color: #ff6f61;">🎈</div>
@@ -29,7 +30,7 @@
     <!-- Main Celebration Card -->
     <div class="page-preview w-full max-w-xl flex flex-col items-center justify-center py-10 px-6">
         <div class="mockup-content w-full flex flex-col items-center justify-center py-4 rounded-lg">
-            <div class="text-xl font-bold text-center mb-3" style="color: #ff6f61;">إلى أغلى الناس على قلبي...</div>
+            <div class="text-xl font-bold text-center mb-3" style="color: #ff6f61;">إلى أغلى الناس على قلبي NONA</div>
             <div class="text-4xl font-extrabold text-center mb-5 glow-text" style="color: #00ffcc;">عيد ميلاد سعيد! <span style='font-size:1.2em;'>🎂</span></div>
             <div class="relative w-full flex justify-center mb-6" style="height: 100px;">
                 <div style="font-size: 3rem; position: absolute; left: 30%; top: 10px; color: #ff6f61; animation: float 3s infinite ease-in-out;">🎈</div>
@@ -48,4 +49,4 @@
 
     <script src="script.js"></script>
 </body>
-</html> 
+</html>
