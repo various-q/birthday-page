@@ -93,21 +93,44 @@ document.addEventListener('DOMContentLoaded', () => {
     createBalloons();
 });
 
-// إظهار ظرف الرسالة عند الضغط على زر المفاجأة
+// تخصيص الاسم والتاريخ والرسالة تلقائياً من المتغيرات في index.html
+window.addEventListener('DOMContentLoaded', function () {
+    if (window.birthdayData) {
+        var nameEl = document.getElementById('birthdayName');
+        var dateEl = document.getElementById('birthdayDate');
+        var msgEl = document.getElementById('envelopeMessage');
+        if (nameEl) nameEl.textContent = window.birthdayData.name;
+        if (dateEl) dateEl.textContent = window.birthdayData.date;
+        if (msgEl) msgEl.textContent = window.birthdayData.message;
+    }
+});
+
+// انفجار الرموز عند المفاجأة
 window.addEventListener('DOMContentLoaded', function () {
     var surpriseButton = document.getElementById('surpriseButton');
+    var emojiRow = document.getElementById('emojiRow');
     var envelopeContainer = document.getElementById('envelopeContainer');
     var envelope = document.getElementById('envelope');
-    if (surpriseButton && envelopeContainer && envelope) {
+    if (surpriseButton && emojiRow && envelopeContainer && envelope) {
         surpriseButton.addEventListener('click', function () {
+            // انفجار الرموز
+            emojiRow.classList.add('explode');
+            setTimeout(function () {
+                emojiRow.classList.add('hide');
+            }, 1200);
+            // إظهار الظرف
             envelopeContainer.style.display = 'flex';
             setTimeout(function () {
                 envelope.classList.add('open');
-            }, 100); // لإعطاء وقت للظهور قبل فتح الغطاء
-            // تمرير الصفحة للظرف
+            }, 400);
             envelopeContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            // إخفاء زر المفاجأة بعد الفتح
             surpriseButton.style.display = 'none';
         });
     }
-}); 
+});
+
+window.birthdayData = {
+    name: 'نايف الشهري ',
+    date: '2025-05-14',
+    message: 'في يومك المميز أتمنى لك سنة مليئة بالسعادة ❤️'
+}; 
