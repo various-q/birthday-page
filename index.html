@@ -67,52 +67,44 @@
         .envelope.open .envelope-message {
             opacity: 1;
         }
-        .emoji-row {
+        .emoji-container {
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 30px;
-            margin-bottom: 20px;
-            transition: transform 0.7s cubic-bezier(.77,0,.18,1);
+            gap: 20px;
+            margin: 20px 0;
             position: relative;
             z-index: 5;
         }
-        .emoji-row .emoji {
-            font-size: 2.5rem;
-            transition: transform 0.7s cubic-bezier(.77,0,.18,1), opacity 0.7s;
-            opacity: 1;
+        .emoji {
+            font-size: 2rem;
+            transition: transform 0.5s ease;
         }
-        .emoji-row.explode .emoji1 {
-            transform: translate(-120px, -80px) scale(1.3) rotate(-20deg);
-        }
-        .emoji-row.explode .emoji2 {
-            transform: translate(-40px, -120px) scale(1.3) rotate(-10deg);
-        }
-        .emoji-row.explode .emoji3 {
-            transform: translate(40px, -120px) scale(1.3) rotate(10deg);
-        }
-        .emoji-row.explode .emoji4 {
-            transform: translate(120px, -80px) scale(1.3) rotate(20deg);
-        }
-        .emoji-row.explode .emoji5 {
-            transform: translate(0, -160px) scale(1.5) rotate(0deg);
-        }
-        .emoji-row.hide .emoji {
-            opacity: 0;
+        .emoji:hover {
+            transform: scale(1.2);
         }
         .birthday-info {
-            margin-bottom: 10px;
+            margin-bottom: 20px;
             text-align: center;
         }
         .birthday-info .name {
             color: #00ffcc;
-            font-size: 1.3rem;
+            font-size: 1.5rem;
             font-weight: bold;
+            margin-bottom: 5px;
         }
         .birthday-info .date {
             color: #ff6f61;
-            font-size: 1rem;
+            font-size: 1.1rem;
             font-weight: bold;
+        }
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background-color: #f00;
+            opacity: 0;
+            pointer-events: none;
         }
     </style>
 </head>
@@ -120,50 +112,42 @@
     <!-- متغيرات التخصيص -->
     <script>
         window.birthdayData = {
-            name: 'نايف الشهري',
-            date: '2025-05-14',
+            name: 'محمد أحمد',
+            date: '2024-06-10',
             message: 'في يومك المميز أتمنى لك سنة مليئة بالسعادة ❤️'
         };
     </script>
+
     <!-- SoundCloud Embed Player -->
     <div style="width: 100%; max-width: 400px; margin: 0 auto 20px auto;">
-      <iframe id="sc-player" width="100%" height="120" scrolling="no" frameborder="no" allow="autoplay"
-        src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/zanb-mana/wz7i1j0l5zgw&color=%2300ffcc&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true">
-      </iframe>
+        <iframe id="sc-player" width="100%" height="120" scrolling="no" frameborder="no" allow="autoplay"
+            src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/zanb-mana/wz7i1j0l5zgw&color=%2300ffcc&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true">
+        </iframe>
     </div>
-
-    <!-- Decorative elements -->
-    <div class="balloon" style="top: 50px; right: 150px; color: #ff6f61;">🎈</div>
-    <div class="balloon" style="top: 100px; left: 180px; color: #00ffcc; animation-delay: 1s;">🎈</div>
-    <div class="balloon" style="bottom: 80px; right: 100px; color: #ffcc00; animation-delay: 2s;">🎁</div>
-    <div class="confetti" style="top: 0; left: 25%; background-color: #ff6f61;"></div>
-    <div class="confetti" style="top: 0; left: 50%; background-color: #00ffcc; animation-delay: 1s;"></div>
-    <div class="confetti" style="top: 0; left: 75%; background-color: #ff00ff; animation-delay: 2s;"></div>
-    <div class="confetti" style="top: 0; left: 30%; background-color: #ffcc00; animation-delay: 3s;"></div>
-    <div class="confetti" style="top: 0; left: 65%; background-color: #66ccff; animation-delay: 4s;"></div>
 
     <!-- Main Celebration Card -->
     <div class="page-preview w-full max-w-xl flex flex-col items-center justify-center py-10 px-6">
         <div class="mockup-content w-full flex flex-col items-center justify-center py-4 rounded-lg">
             <!-- معلومات العيد ميلاد -->
             <div class="birthday-info">
-                <div class="name" id="birthdayName">نايف الشهري</div>
-                <div class="date" id="birthdayDate">2025-05-14</div>
+                <div class="name" id="birthdayName">محمد أحمد</div>
+                <div class="date" id="birthdayDate">2024-06-10</div>
             </div>
+            
             <div class="text-xl font-bold text-center mb-3" style="color: #ff6f61;">إلى أغلى الناس على قلبي...</div>
             <div class="text-4xl font-extrabold text-center mb-5 glow-text" style="color: #00ffcc;">عيد ميلاد سعيد! <span style='font-size:1.2em;'>🎂</span></div>
-            <!-- صف الرموز المرتبة -->
-            <div class="emoji-row" id="emojiRow">
-                <span class="emoji emoji1">🎈</span>
-                <span class="emoji emoji2">🎁</span>
-                <span class="emoji emoji5">🎉</span>
-                <span class="emoji emoji3">🎈</span>
-                <span class="emoji emoji4">🎁</span>
+            
+            <!-- الرموز التعبيرية -->
+            <div class="emoji-container" id="emojiContainer">
+                <span class="emoji">🎈</span>
+                <span class="emoji">🎁</span>
+                <span class="emoji">🎉</span>
             </div>
-            <div class="relative w-full flex justify-center mb-6" style="height: 100px;"></div>
+
             <div class="flex mb-4 justify-center w-full">
                 <div class="btn-preview text-sm px-4 py-2" id="musicButton">تشغيل الموسيقى 🎵</div>
             </div>
+
             <!-- ظرف المعايدة -->
             <div id="envelopeContainer" class="envelope-container">
                 <div id="envelope" class="envelope">
@@ -173,6 +157,7 @@
                     </div>
                 </div>
             </div>
+
             <!-- زر المفاجأة -->
             <div class="btn-control text-sm px-4 py-2" id="surpriseButton">أضغط هنا للمفاجأة ✨</div>
         </div>
@@ -181,4 +166,4 @@
     <script src="https://w.soundcloud.com/player/api.js"></script>
     <script src="script.js"></script>
 </body>
-</html> 
+</html>
