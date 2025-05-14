@@ -8,6 +8,8 @@ window.addEventListener('DOMContentLoaded', function () {
 
     if (widget && musicButton) {
         musicButton.addEventListener('click', function () {
+            // تمرير الصفحة إلى مشغل SoundCloud
+            widgetIframe.scrollIntoView({ behavior: 'smooth', block: 'center' });
             if (!isPlaying) {
                 widget.play();
                 musicButton.textContent = 'إيقاف الموسيقى ⏸️';
