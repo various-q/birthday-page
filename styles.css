@@ -264,19 +264,3 @@ body::before, body::after {
 }
 
 <img src="https://i.postimg.cc/BnWDKVFD/1.png" alt="شعار الصفحة" class="logo" />
-
-<div class="birthday-name">اسم صاحب الميلاد</div>
-
-<div class="birthday-wish">عيد ميلاد سعيد</div>
-
-<div class="birthday-message">
-    2025-05-16<br>
-    إلى أغلى الناس على قلبي...
-</div>
-
-<div style="text-align:center;">
-    <button class="btn-preview">زر معايدة</button>
-    <button class="btn-control">زر آخر</button>
-</div>
-
-<img src="https://i.postimg.cc/TP4551g3/image.png" alt="كيكة عيد ميلاد" class="cake-icon" /> 
