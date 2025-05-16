@@ -182,9 +182,9 @@ body::before, body::after {
 
 .logo, .big-logo {
     display: block;
-    margin: 40px auto 0 auto;
-    width: 130px;
-    height: 130px;
+    margin: 50px auto 0 auto;
+    width: 170px;
+    height: 170px;
     object-fit: contain;
 }
 
@@ -257,8 +257,49 @@ body::before, body::after {
 
 .cake-icon {
     display: block;
-    margin: 40px auto 0 auto;
-    width: 80px;
-    height: 80px;
+    margin: 30px auto 0 auto;
+    width: 120px;
+    height: 120px;
     object-fit: contain;
+}
+
+.surprise-btn {
+    background: linear-gradient(135deg, #c8e7ff 0%, #e0aaff 100%);
+    color: #5645f4;
+    border-radius: 25px;
+    padding: 14px 38px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: none;
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0 10px;
+}
+.surprise-btn:hover {
+    opacity: 0.9;
+    background: linear-gradient(135deg, #e0aaff 0%, #c8e7ff 100%);
+}
+
+.congrats-message {
+    display: block;
+    margin: 30px auto 0 auto;
+    color: #fff;
+    background: rgba(130, 97, 255, 0.15);
+    border-radius: 18px;
+    padding: 1.5rem 2.5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    max-width: 420px;
+    box-shadow: 0 4px 24px rgba(130, 97, 255, 0.08);
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+    transition: opacity 0.7s cubic-bezier(.77,0,.18,1), transform 0.7s cubic-bezier(.77,0,.18,1);
+}
+.congrats-message.show {
+    opacity: 1;
+    transform: translateY(0) scale(1);
 }
