@@ -209,31 +209,28 @@ document.addEventListener('DOMContentLoaded', function() {
     var scPlayer = document.getElementById('sc-player');
     var scWidget = null;
 
-    if (window.SC && window.SC.Widget) {
-        scWidget = SC.Widget(scPlayer);
-    } else {
-        // إذا لم يكن SC جاهزًا بعد، انتظر تحميله
-        var script = document.createElement('script');
-        script.src = 'https://w.soundcloud.com/player/api.js';
-        script.onload = function() {
-            scWidget = window.SC.Widget(scPlayer);
+    // تأكد من عدم إضافة الحدث أكثر من مرة
+    if (surpriseBtn) {
+        surpriseBtn.onclick = function() {
+            // إظهار العبارة مع تأثير
+            congratsMsg.style.display = 'block';
+            setTimeout(function() {
+                congratsMsg.classList.add('show');
+            }, 10);
+
+            // تشغيل الأغنية
+            if (window.SC && window.SC.Widget) {
+                if (!scWidget) scWidget = SC.Widget(scPlayer);
+                scWidget.play();
+            } else {
+                var script = document.createElement('script');
+                script.src = 'https://w.soundcloud.com/player/api.js';
+                script.onload = function() {
+                    scWidget = window.SC.Widget(scPlayer);
+                    scWidget.play();
+                };
+                document.body.appendChild(script);
+            }
         };
-        document.body.appendChild(script);
     }
-
-    surpriseBtn.addEventListener('click', function() {
-        // إظهار العبارة مع تأثير
-        congratsMsg.style.display = 'block';
-        setTimeout(function() {
-            congratsMsg.classList.add('show');
-        }, 10);
-
-        // تشغيل الأغنية
-        if (scWidget) {
-            scWidget.play();
-        } else if (window.SC && window.SC.Widget) {
-            scWidget = SC.Widget(scPlayer);
-            scWidget.play();
-        }
-    });
 }); 
