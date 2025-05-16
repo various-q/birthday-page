@@ -13,7 +13,8 @@ body::before {
     top: 0; left: 0; right: 0; bottom: 0;
     z-index: -2;
     background: url('https://i.postimg.cc/5yyN7WjV/image.jpg') center center/cover no-repeat;
-    opacity: 0.45;
+    opacity: 0.7;
+    filter: brightness(1.1) contrast(1.1);
 }
 
 body::after {
@@ -21,7 +22,7 @@ body::after {
     position: fixed;
     top: 0; left: 0; right: 0; bottom: 0;
     z-index: -1;
-    background: linear-gradient(135deg, #1a1a1a99 0%, #2d2d2d99 100%);
+    background: linear-gradient(135deg, rgba(26, 26, 26, 0.7) 0%, rgba(45, 45, 45, 0.7) 100%);
 }
 
 .page-preview {
