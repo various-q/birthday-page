@@ -112,46 +112,19 @@
     <!-- الشعار في الأعلى -->
     <img src="https://i.postimg.cc/BnWDKVFD/1.png" alt="شعار الصفحة" class="logo big-logo" />
 
-    <!-- صورة الكيكة بعد عبارة عيد ميلاد سعيد -->
-    <img src="https://i.postimg.cc/TP4551g3/image.png" alt="كيكة عيد ميلاد" class="cake-icon" style="margin-top: 0; margin-bottom: 30px; width: 110px; height: 110px;" />
+    <!-- صورة الكيكة -->
+    <img src="https://i.postimg.cc/TP4551g3/image.png" alt="كيكة عيد ميلاد" class="cake-icon" style="margin-top: 30px; margin-bottom: 30px; width: 120px; height: 120px;" />
 
-    <!-- Main Celebration Card -->
-    <div class="page-preview w-full max-w-xl flex flex-col items-center justify-center py-10 px-6">
-        <div class="mockup-content w-full flex flex-col items-center justify-center py-4 rounded-lg">
-            <!-- معلومات العيد ميلاد -->
-            <div class="birthday-info">
-                <div class="name" id="birthdayName">محمد أحمد</div>
-                <div class="date" id="birthdayDate">2024-06-10</div>
-            </div>
-            
-            <div class="text-xl font-bold text-center mb-3" style="color: #7961ff;">إلى أغلى الناس على قلبي...</div>
-            <div class="text-4xl font-extrabold text-center mb-5 glow-text" style="color: #eeeeee;">عيد ميلاد سعيد! <span style='font-size:1.2em;'>🎂</span></div>
-            
-            <!-- الرموز التعبيرية -->
-            <div class="emoji-container" id="emojiContainer">
-                <span class="emoji">🎈</span>
-                <span class="emoji">🎁</span>
-                <span class="emoji">🎉</span>
-            </div>
+    <!-- زر المفاجأة -->
+    <button id="surpriseButton" class="btn-preview surprise-btn" style="margin-bottom: 30px;">المفاجأة 🎉</button>
 
-            <div class="flex mb-4 justify-center w-full">
-                <div class="btn-preview text-sm px-4 py-2" id="musicButton">تشغيل الموسيقى 🎵</div>
-            </div>
+    <!-- عبارة التهنئة (مخفية في البداية) -->
+    <div id="congratsMessage" class="congrats-message" style="display:none;">في يومك المميز أتمنى لك سنة مليئة بالسعادة ❤️</div>
 
-            <!-- ظرف المعايدة -->
-            <div id="envelopeContainer" class="envelope-container">
-                <div id="envelope" class="envelope">
-                    <div class="envelope-flap"></div>
-                    <div class="envelope-body">
-                        <div class="envelope-message" id="envelopeMessage">في يومك المميز أتمنى لك سنة مليئة بالسعادة ❤️</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- زر المفاجأة -->
-            <div class="btn-control text-sm px-4 py-2" id="surpriseButton">أضغط هنا للمفاجأة ✨</div>
-        </div>
-    </div>
+    <!-- مشغل SoundCloud (مخفي) -->
+    <iframe id="sc-player" width="0" height="0" style="display:none;" scrolling="no" frameborder="no" allow="autoplay"
+        src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/zanb-mana/wz7i1j0l5zgw&color=%2300ffcc&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false">
+    </iframe>
 
     <script src="https://w.soundcloud.com/player/api.js"></script>
     <script src="script.js"></script>
