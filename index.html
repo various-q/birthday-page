@@ -109,12 +109,36 @@
     </style>
 </head>
 <body class="p-8 flex flex-col items-center justify-center min-h-screen">
+    <!-- الشعار في الأعلى -->
+    <img src="https://i.postimg.cc/BnWDKVFD/1.png" alt="شعار الصفحة" class="logo" />
+
+    <!-- اسم صاحب الميلاد -->
+    <div class="birthday-name">اسم صاحب الميلاد</div>
+
+    <!-- عبارة عيد ميلاد سعيد -->
+    <div class="birthday-wish">عيد ميلاد سعيد</div>
+
+    <!-- عبارة الإهداء -->
+    <div class="birthday-message">
+        2025-05-16<br>
+        إلى أغلى الناس على قلبي...
+    </div>
+
+    <!-- الأزرار -->
+    <div style="text-align:center;">
+        <button class="btn-preview">زر معايدة</button>
+        <button class="btn-control">زر آخر</button>
+    </div>
+
+    <!-- رمز الكيكة -->
+    <img src="https://i.postimg.cc/TP4551g3/image.png" alt="كيكة عيد ميلاد" class="cake-icon" />
+
     <!-- متغيرات التخصيص -->
     <script>
         window.birthdayData = {
-            name: 'عمر الاسمري',
-            date: '2025-05-16',
-            message: 'كل عام وانت بخير وعسى سنينك كلها سعادة يالبى العقوق ❤️'
+            name: 'محمد أحمد',
+            date: '2024-06-10',
+            message: 'في يومك المميز أتمنى لك سنة مليئة بالسعادة ❤️'
         };
     </script>
 
@@ -130,8 +154,8 @@
         <div class="mockup-content w-full flex flex-col items-center justify-center py-4 rounded-lg">
             <!-- معلومات العيد ميلاد -->
             <div class="birthday-info">
-                <div class="name" id="birthdayName">عمر الاسمري</div>
-                <div class="date" id="birthdayDate">2025-05-16</div>
+                <div class="name" id="birthdayName">محمد أحمد</div>
+                <div class="date" id="birthdayDate">2024-06-10</div>
             </div>
             
             <div class="text-xl font-bold text-center mb-3" style="color: #ff6f61;">إلى أغلى الناس على قلبي...</div>
@@ -153,7 +177,7 @@
                 <div id="envelope" class="envelope">
                     <div class="envelope-flap"></div>
                     <div class="envelope-body">
-                        <div class="envelope-message" id="envelopeMessage">كل عام وانت بخير وعسى سنينك كلها سعادة يالبى العقوق ❤️</div>
+                        <div class="envelope-message" id="envelopeMessage">في يومك المميز أتمنى لك سنة مليئة بالسعادة ❤️</div>
                     </div>
                 </div>
             </div>
