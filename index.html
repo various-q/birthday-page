@@ -58,7 +58,7 @@
         .envelope-message {
             opacity: 0;
             transition: opacity 0.7s 0.3s;
-            color: #ff6f61;
+            color: #ff6e6100;
             font-size: 1.1rem;
             font-weight: bold;
             text-align: center;
@@ -112,14 +112,16 @@
     <!-- الشعار في الأعلى -->
     <img src="https://i.postimg.cc/BnWDKVFD/1.png" alt="شعار الصفحة" class="logo big-logo" />
 
-    <!-- صورة الكيكة -->
-    <img src="https://i.postimg.cc/TP4551g3/image.png" alt="كيكة عيد ميلاد" class="cake-icon" style="margin-top: 30px; margin-bottom: 30px; width: 120px; height: 120px;" />
-
     <!-- زر المفاجأة -->
-    <button id="surpriseButton" class="btn-preview surprise-btn" style="margin-bottom: 30px;">المفاجأة 🎉</button>
+    <button id="surpriseButton" class="btn-preview surprise-btn" style="margin: 40px 0 30px 0;">أضغط هنا للمفاجأة ✨</button>
 
     <!-- عبارة التهنئة (مخفية في البداية) -->
     <div id="congratsMessage" class="congrats-message" style="display:none;">في يومك المميز أتمنى لك سنة مليئة بالسعادة ❤️</div>
+
+    <!-- صورة الكيكة في الأسفل -->
+    <footer style="width:100%;display:flex;justify-content:center;align-items:end;position:fixed;bottom:0;left:0;right:0;z-index:2;background:transparent;">
+        <img src="https://i.postimg.cc/TP4551g3/image.png" alt="كيكة عيد ميلاد" class="cake-icon" style="margin: 0 auto 20px auto; width: 180px; height: 180px; display:block;" />
+    </footer>
 
     <!-- مشغل SoundCloud (مخفي) -->
     <iframe id="sc-player" width="0" height="0" style="display:none;" scrolling="no" frameborder="no" allow="autoplay"
