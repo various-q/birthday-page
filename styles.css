@@ -153,9 +153,9 @@ body::before, body::after {
 
 /* Responsive adjustments */
 @media (max-width: 640px) {
-    .logo {
-        width: 60px;
-        height: 60px;
+    .logo, .big-logo {
+        width: 90px;
+        height: 90px;
     }
     .birthday-title {
         font-size: 2rem;
@@ -180,11 +180,11 @@ body::before, body::after {
     }
 }
 
-.logo {
+.logo, .big-logo {
     display: block;
-    margin: 40px auto 20px auto;
-    width: 90px;
-    height: 90px;
+    margin: 40px auto 0 auto;
+    width: 130px;
+    height: 130px;
     object-fit: contain;
 }
 
@@ -262,5 +262,3 @@ body::before, body::after {
     height: 80px;
     object-fit: contain;
 }
-
-<img src="https://i.postimg.cc/BnWDKVFD/1.png" alt="شعار الصفحة" class="logo" />
