@@ -107,20 +107,24 @@
             pointer-events: none;
         }
         .cake-icon {
-            display: block;
-            margin: 30px auto 0 auto;
-            width: 180px;
-            height: 180px;
+            position: fixed;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 260px;
+            height: 260px;
             object-fit: contain;
-            max-width: 80vw;
-            max-height: 35vh;
+            z-index: 100;
+            pointer-events: none;
+            max-width: 95vw;
+            max-height: 40vh;
         }
         @media (max-width: 640px) {
             .cake-icon {
-                width: 110px;
-                height: 110px;
-                max-width: 90vw;
-                max-height: 25vh;
+                width: 150px;
+                height: 150px;
+                max-width: 98vw;
+                max-height: 28vh;
             }
         }
     </style>
@@ -146,8 +150,8 @@
         <div style="font-size:1.7rem; color:#fff; font-weight:bold; margin-bottom:10px;">عيد ميلاد سعيد 🎉</div>
         <div style="font-size:1.2rem; color:#fff;">في يومك المميز أتمنى لك سنة مليئة بالسعادة ❤️</div>
     </div>
-    <!-- صورة الكيكة تظهر أسفل عبارة التهنئة -->
-    <img id="cakeImage" src="https://i.postimg.cc/TP4551g3/image.png" alt="كيكة عيد ميلاد" class="cake-icon" style="display:none; margin-top: 50px;" />
+    <!-- صورة الكيكة تظهر أسفل الصفحة -->
+    <img id="cakeImage" src="https://i.postimg.cc/TP4551g3/image.png" alt="كيكة عيد ميلاد" class="cake-icon" style="display:none;" />
 
     <!-- مشغل SoundCloud (مخفي) -->
     <iframe id="sc-player" width="0" height="0" style="display:none;" scrolling="no" frameborder="no" allow="autoplay"
