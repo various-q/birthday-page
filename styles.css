@@ -171,8 +171,8 @@ body::before, body::after {
         font-size: 1.1rem;
     }
     .cake-icon {
-        width: 55px;
-        height: 55px;
+        width: 120px;
+        height: 120px;
     }
     .btn-preview, .btn-control {
         padding: 10px 20px;
@@ -256,11 +256,16 @@ body::before, body::after {
 }
 
 .cake-icon {
-    display: block;
-    margin: 30px auto 0 auto;
-    width: 120px;
-    height: 120px;
+    position: fixed;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 220px;
+    height: 220px;
+    z-index: 100;
+    margin: 0 auto 10px auto;
     object-fit: contain;
+    pointer-events: none;
 }
 
 .surprise-btn {
