@@ -152,9 +152,9 @@ window.addEventListener('DOMContentLoaded', function () {
 });
 
 window.birthdayData = {
-    name: 'نايف الشهري ',
-    date: '2025-05-14',
-    message: 'في يومك المميز أتمنى لك سنة مليئة بالسعادة ❤️'
+    name: 'Shatha',
+    date: '2025-06-18',
+    message: 'Baby في يومك المميز أتمنى لك سنة مليئة بالسعادة ❤️'
 };
 
 document.addEventListener('DOMContentLoaded', function() {
