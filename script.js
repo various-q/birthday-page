@@ -152,7 +152,7 @@ window.addEventListener('DOMContentLoaded', function () {
 });
 
 window.birthdayData = {
-    name: 'نايف الشهري',
+    name: 'شريفة الشهري',
     date: '2025-07-2',
     message: 'Baby في يومك المميز أتمنى لك سنة مليئة بالسعادة ❤️'
 };
