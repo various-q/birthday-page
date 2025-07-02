@@ -153,7 +153,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
 window.birthdayData = {
     name: 'المهندسة رهفي',
-    date: '2025-07-1',
+    date: '2004-07-1',
     message: 'Baby في يومك المميز أتمنى لك سنة مليئة بالسعادة ❤️'
 };
 
