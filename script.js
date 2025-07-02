@@ -152,8 +152,8 @@ window.addEventListener('DOMContentLoaded', function () {
 });
 
 window.birthdayData = {
-    name: 'شريفة الشهري',
-    date: '2025-07-2',
+    name: 'المهندسة رهفي',
+    date: '2025-07-1',
     message: 'Baby في يومك المميز أتمنى لك سنة مليئة بالسعادة ❤️'
 };
 
