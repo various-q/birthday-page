@@ -152,8 +152,8 @@ window.addEventListener('DOMContentLoaded', function () {
 });
 
 window.birthdayData = {
-    name: 'Shatha',
-    date: '2025-06-18',
+    name: 'نايف الشهري',
+    date: '2025-07-2',
     message: 'Baby في يومك المميز أتمنى لك سنة مليئة بالسعادة ❤️'
 };
 
