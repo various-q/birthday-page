@@ -127,23 +127,34 @@
                 max-height: 28vh;
             }
         }
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex: 1;
+            width: 100%;
+        }
     </style>
 </head>
 <body class="p-8 flex flex-col items-center justify-center min-h-screen">
     <!-- الشعار في الأعلى -->
     <img src="https://i.postimg.cc/RC2BL8BV/2.png" alt="شعار الصفحة" class="logo big-logo" />
 
-    <!-- معلومات الإهداء -->
-    <div style="text-align:center; margin: 30px 0 10px 0;">
-        <div style="font-size:1.1rem; color:#faf9f9; font-weight:bold;">إلى أغلى الناس على قلبي </div>
-        <div style="font-size:1.3rem; color:#f5f3f4; font-weight:bold;">Nouf</div>
-        <div style="font-size:1.1rem; color:#f5f3f4;">1424/10/22</div>
-    </div>
+    <!-- المحتوى الرئيسي في وسط الصفحة -->
+    <div class="main-content">
+        <!-- معلومات الإهداء -->
+        <div style="text-align:center; margin: 30px 0 10px 0;">
+            <div style="font-size:1.1rem; color:#faf9f9; font-weight:bold;">إلى أغلى الناس على قلبي </div>
+            <div style="font-size:1.3rem; color:#f5f3f4; font-weight:bold;">Nouf</div>
+            <div style="font-size:1.1rem; color:#f5f3f4;">1424/10/22</div>
+        </div>
 
-    <!-- زر المفاجأة -->
-    <button id="surpriseButton" class="btn-preview surprise-btn" style="margin: 20px 0 30px 0; text-align:center;">
-        أضغط هنا للمفاجأة ✨
-    </button>
+        <!-- زر المفاجأة في وسط الصفحة -->
+        <button id="surpriseButton" class="btn-preview surprise-btn" style="margin: 40px 0; text-align:center;">
+            أضغط هنا للمفاجأة ✨
+        </button>
+    </div>
 
     <!-- عبارة التهنئة (مخفية في البداية) -->
     <div id="congratsMessage" class="congrats-message" style="display:none;">
@@ -161,4 +172,4 @@
     <script src="https://w.soundcloud.com/player/api.js"></script>
     <script src="script.js"></script>
 </body>
-</html>
+</html> 
