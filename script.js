@@ -152,9 +152,9 @@ window.addEventListener('DOMContentLoaded', function () {
 });
 
 window.birthdayData = {
-    name: 'المهندسة رهفي',
-    date: '2004-07-1',
-    message: 'Baby في يومك المميز أتمنى لك سنة مليئة بالسعادة ❤️'
+    name: 'لولو ',
+    date: '2025-09-24',
+    message: ' في يومك المميز أتمنى لك سنة مليئة بالسعادة ❤️'
 };
 
 document.addEventListener('DOMContentLoaded', function() {
