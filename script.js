@@ -152,8 +152,8 @@ window.addEventListener('DOMContentLoaded', function () {
 });
 
 window.birthdayData = {
-    name: 'لولو ',
-    date: '2025-09-24',
+    name: 'نجمتي مريم ',
+    date: '2002-11-20',
     message: ' في يومك المميز أتمنى لك سنة مليئة بالسعادة ❤️'
 };
 
